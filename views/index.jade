@@ -1,0 +1,31 @@
+extends layout
+
+block content
+
+	div.container
+		h2 Hey #{name},
+		h1 Too lazy(or busy) to do something now? tag them on here for Later!
+		
+		
+		form(name="addProc",method="post",action="/addProc")
+			input#name(type='text', name='name') Name
+			input#username(type='text', name='username') TimeLine
+			input#key(type='text', name='key') Label
+			input#content(type='text', name='content') Whats the content?
+			.form-actions
+				button.btn.btn-primary(type='submit') Let's do it later
+		
+		h3 Your Previous Procrastinations!
+		form
+			table
+				thead
+					tr: th
+				tbody
+					each post, i in procrastinations
+						tr
+							td
+								blockquote
+									a(href='#') #{post.key)
+									p #{post.content)
+									small #{post.username)
+								
