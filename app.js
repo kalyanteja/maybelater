@@ -7,6 +7,10 @@ var express = require('express')
   , routes = require('./routes')
   , http = require('http')
   , path = require('path');
+  
+var mongo = require('mongodb');
+var monk = require('monk');
+var db = monk('localhost:27017/laterdb1');
 
 var app = express();
 
@@ -28,9 +32,9 @@ app.configure('development', function(){
     app.locals.pretty = true;
 });
 
-app.get('/', routes.index);
+app.get('/', routes.index(db));
 app.post('/', routes.post);
-app.post('/addProc', routes.addProc);
+app.post('/addProc', routes.addProc(db));
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));

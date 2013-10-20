@@ -4,20 +4,31 @@ block content
 
 	div.container
 		h2 Hey #{name},
-		h1 Too lazy(or busy) to do something now? tag them on here for Later!
+		h1 Too lazy(or busy) to do something now? 
+		.line 
+		h3
+			i 
+				a.btn.btn-success.btn-large( onclick='$("#lazyform").toggle()') Log		
+			i  that something below to give shit later!
 		
 		
-		form(name="addProc",method="post",action="/addProc")
-			input#name(type='text', name='name') Name
-			input#username(type='text', name='username') TimeLine
-			input#key(type='text', name='key') Label
-			input#content(type='text', name='content') Whats the content?
-			.form-actions
-				button.btn.btn-primary(type='submit') Let's do it later
+		form#lazyform(name="addProc",method="post",action="/addProc").hide()
+			div
+				.line 
+				input#name(type='text', name='name', placeholder='Name')
+				.line 
+				input#key(type='text', name='key', placeholder='What is it about?')
+				.line 
+				textarea#content(name='content', rows="5", placeholder='Any references or links or text?')
+				.line
+					button.btn.btn-primary(type='submit') I'm too lazy, will do this later!
 		
-		h3 Your Previous Procrastinations!
+		hr.hline_color
+		
+		h3
+			i Your procrastinations so far...
 		form
-			table
+			table.table-striped
 				thead
 					tr: th
 				tbody
