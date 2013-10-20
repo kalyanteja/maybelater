@@ -9,7 +9,7 @@ exports.post = function(req, res) {
 
 exports.index = function(db) {
     return function(req, res) {
-        var collection = db.get('proclog');
+        var collection = db.collection('proclog');
         collection.find({},{},function(e,procrastinations){
             res.render('index', { title: 'Program Name', name: null, procrastinations: procrastinations});
         });
@@ -25,7 +25,7 @@ exports.addProc = function(db) {
 		var content = req.body.content;
 		
 		// Set our collection
-        var collection = db.get('proclog');
+        var collection = db.collection('proclog');
 
         // Submit to the DB
         collection.insert({

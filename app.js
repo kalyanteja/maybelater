@@ -8,9 +8,10 @@ var express = require('express')
   , http = require('http')
   , path = require('path');
   
-var mongo = require('mongodb');
+  
+var mongo = require('mongojs');
 var monk = require('monk');
-var db = monk('localhost:27017/laterdb1');
+var db =  mongo.connect('kalyanteja:adlabs18@ds45107.mongolab.com:45107/laterdb1'); //monk('localhost:27017/laterdb1');
 
 var app = express();
 
