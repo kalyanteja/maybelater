@@ -1,11 +1,4 @@
-var easypost = require('easypost');
 var procrastinations = null;
-
-exports.post = function(req, res) {
-    easypost.get(req, res, function (data) {
-        res.render('index', { title: 'Program Name', name: data.name });
-    });
-};
 
 exports.index = function(db) {
     return function(req, res) {

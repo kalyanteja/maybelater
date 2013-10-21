@@ -11,8 +11,7 @@ var express = require('express')
   
 var mongo = require('mongodb');
 var monk = require('monk');
-var db =  monk('localhost:27017/laterdb1');//mongo.connect('kalyanteja:adlabs18@ds45107.mongolab.com:45107/laterdb1'); 
-
+var db =  monk('kalyanteja:kalyanteja@ds045107.mongolab.com:45107/laterdb1'); //localhost:27017/laterdb1')
 var app = express();
 
 app.configure(function(){
