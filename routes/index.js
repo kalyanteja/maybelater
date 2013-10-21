@@ -29,9 +29,10 @@ exports.addProc = function(db) {
 
         // Submit to the DB
         collection.insert({
-            "username" : name + ", now",
+            "username" : name,
             "key" : key, 
-			"content" : content
+			"content" : content,
+            "loggedon" : new Date()
         }, function (err, doc) {
             if (err) {
                 // If it failed, return error
