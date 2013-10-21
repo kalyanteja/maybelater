@@ -1,0 +1,8 @@
+##to create a db for laterapp
+
+use laterdb1
+
+db.proclog.insert({ "username" : "Kalyan", "key" : "blog", "content": "Found this article on engadget, seems to be a good read. Read later." }) 
+db.proclog.insert({ "username" : "Kalyan", "key" : "gadget", "content": "Check pics of my new nexus later, ping karthik later." })
+
+db.proclog.find().pretty();

@@ -9,9 +9,9 @@ var express = require('express')
   , path = require('path');
   
   
-var mongo = require('mongojs');
+var mongo = require('mongodb');
 var monk = require('monk');
-var db =  mongo.connect('kalyanteja:adlabs18@ds45107.mongolab.com:45107/laterdb1'); //monk('localhost:27017/laterdb1');
+var db =  monk('localhost:27017/laterdb1');//mongo.connect('kalyanteja:adlabs18@ds45107.mongolab.com:45107/laterdb1'); 
 
 var app = express();
 
